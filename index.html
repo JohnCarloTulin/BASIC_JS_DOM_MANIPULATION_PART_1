@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Activity #1 - John Carlo Tulin</title>
+</head>
+<body class="bg-blue-200 p-6">
+
+    <!-- Banner -->
+    <div id="banner" class="bg-yellow-200 border border-black p-4 max-w-2xl">
+        <h1 class="text-xl font-bold">Hi there! I'm John Carlo Tulin.</h1>
+        <ul id="hobby_List" class="list-disc ml-5 mt-2">
+            <li>I'm a 3rd year CS student.</li>
+            <li>I have an interest website and software design & development</li>
+            <li>I spend most of my time teaching myself how to design advance website and data algorithms</li>
+            <li>I always use Python, HTML, CSS, and Javascript</li>
+            <li>new hobby item</li>
+        </ul>
+    </div>
+
+    <!-- Text field for adding details -->
+    <div class="mt-4">
+        <label for="new_Item" class="mr-2">Add New:</label>
+        <input type="text" id="new_Item" class="border p-1">
+    </div>
+
+    <!-- Buttons -->
+    <div class="mt-4 flex gap-4">
+        <button id="banner_Background" class="bg-gray-300 p-4 border">Change banner background</button>
+        <button id="page_Background" class="bg-gray-300 p-4 border">Change page background</button>
+        <button id="add_Item" class="bg-gray-300 p-4 border">Add new item on the list</button>
+    </div>
+
+    <!-- This are the methods/function (Javascript) -->
+    <script>
+        document.getElementById("banner_Background").addEventListener("click", function () {
+            document.getElementById("banner").classList.toggle("bg-red-300");
+        });
+
+        document.getElementById("page_Background").addEventListener("click", function () {
+            document.body.classList.toggle("bg-violet-200");
+        });
+
+        document.getElementById("add_Item").addEventListener("click", function () {
+            let newItem = document.getElementById("new_Item").value.trim();
+            if (newItem) {
+                let li = document.createElement("li");
+                li.textContent = newItem;
+                document.getElementById("hobby_List").appendChild(li);
+                document.getElementById("new_Item").value = "";
+            }
+        });
+    </script>
+
+</body>
+</html>
